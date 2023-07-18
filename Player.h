@@ -22,6 +22,9 @@ private:
 	int mAttack;
 
 public:
+	Player() {}
+	~Player() {}
+
 	void Walk();
 	void Run();
 	void Jump();

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Player.h"
-#include <cmath>
+
 /*
 class Galaxy
 {
@@ -77,16 +77,17 @@ int main()
 
 }
 */
-
+/*
 class Coordinate
 {
-	double mX;
-	double mY;
+private:
+	int mX;
+	int mY;
 
 public:
 	void Distance() const ;
 	void Print() const;
-	void Input(double x, double y);
+	void Input(int x, int y);
 };
 
 void Coordinate::Print() const
@@ -96,10 +97,10 @@ void Coordinate::Print() const
 
 void Coordinate::Distance() const
 {
-	std::cout << std::sqrt(std::pow(mX,2)+std::pow(mY,2)) << std::endl;
+	std::cout << sqrt(std::pow(mX,2)+std::pow(mY,2)) << std::endl;
 }
 
-void Coordinate::Input(double x, double y)
+void Coordinate::Input(int x, int y)
 {
 	mX = x;
 	mY = y;
@@ -107,11 +108,38 @@ void Coordinate::Input(double x, double y)
 
 int main()
 {
-	double x{}, y{};
+	int x{}, y{};
 	Coordinate point;
 	std::cin >> x >> y;
 	std::cout << std::endl;
 	point.Input(x, y);
 	point.Distance();
 	point.Print();
+}
+*/
+
+class Monster
+{
+private:
+	const int mHealth;
+	const int mLevel;
+
+public:
+	 // default constructor
+	Monster(int level=0, int health =0) : mHealth{ level }, mLevel{ health } // 멤버 초기화 리스트
+	{
+		//이렇게 쓰면 상수도 초기화 가능하니 생성자에서는 멤버 초기화 리스트를 쓰는 것이 좋다
+	}
+	void Print()
+	{
+		std::cout << "Health : " << mHealth << std::endl;
+		std::cout << "Level : " << mLevel << std::endl;
+	}
+};
+
+int main()
+{
+	Monster m1(10,100);
+
+	m1.Print();
 }
