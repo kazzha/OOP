@@ -1,58 +1,6 @@
 #include <iostream>
-#include "Player.h"
+#include "Point2D.h"
 
-/*
-class Galaxy
-{
-	// state - member vaiable
-private:
-	char modelName[10];
-
-public:
-	int color;
-	int weight;
-
-	// behaviour - member function
-	void Phone()
-	{
-		this->color;
-		std::cout << "따르릉" << std::endl;
-	}
-	void Massage()
-	{
-		std::cout << "메시지" << std::endl;
-	}
-};
-
-class Computer
-{
-private:
-	int power{};
-	char mainboard[10]{};
-	
-	void Power()
-	{
-		std::cout << power << std::endl;
-	}
-
-public:
-	int cost{};
-	int color{};
-
-	void Cost()
-	{
-		std::cout << cost << std::endl;
-	}
-};
-int main()
-{
-	// instantiate(인스턴스화)
-    Galaxy myPhone;
-
-	
-}
-
-*/
 
 // 클래스 안에서는 함수의 선언 순서 상관 없음. 한 블럭으로 묶이기 때문
 /*
@@ -77,46 +25,18 @@ int main()
 
 }
 */
-/*
-class Coordinate
-{
-private:
-	int mX;
-	int mY;
-
-public:
-	void Distance() const ;
-	void Print() const;
-	void Input(int x, int y);
-};
-
-void Coordinate::Print() const
-{
-	std::cout << "( " << mX << " , " << mY << " )" << std::endl;
-}
-
-void Coordinate::Distance() const
-{
-	std::cout << sqrt(std::pow(mX,2)+std::pow(mY,2)) << std::endl;
-}
-
-void Coordinate::Input(int x, int y)
-{
-	mX = x;
-	mY = y;
-}
 
 int main()
 {
 	int x{}, y{};
-	Coordinate point;
+	Point2D point;
 	std::cin >> x >> y;
 	std::cout << std::endl;
 	point.Input(x, y);
 	point.Distance();
 	point.Print();
 }
-*/
+
 
 class Monster
 {
@@ -127,6 +47,7 @@ private:
 public:
 	 // default constructor
 	Monster(int level=0, int health =0) : mHealth{ level }, mLevel{ health } // 멤버 초기화 리스트
+		//초기화에는 mHealth(),mLevel() 이렇게 더 많이 씀. 밑에도 중괄호를 써서
 	{
 		//이렇게 쓰면 상수도 초기화 가능하니 생성자에서는 멤버 초기화 리스트를 쓰는 것이 좋다
 	}
@@ -137,9 +58,26 @@ public:
 	}
 };
 
+// 동적 배열
+// Wrapper Class : 어떤 기능을 클래스로 감싸는 것
+
+class MyArray
+{
+private:
+	int* mArray;
+	int mLength;
+
+public:
+	MyArray(int len) : mLength(len), mArray{ new int[len] {} }
+	{
+
+	}
+	~MyArray()
+	{
+		delete[] mArray;
+	}
+};
 int main()
 {
-	Monster m1(10,100);
-
-	m1.Print();
+	MyArray array{ 100 };
 }

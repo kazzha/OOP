@@ -22,7 +22,8 @@ private:
 	int mAttack;
 
 public:
-	Player() {}
+	Player() : mHealth(0), mAttack(0) 
+	{}
 	~Player() {}
 
 	void Walk();
