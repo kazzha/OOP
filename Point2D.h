@@ -15,7 +15,7 @@ public:
 
 	Point2D(int x, int y) : mX(x), mY(y)
 	{
-		std::cout << <기본 생성자> << std::endl;
+		std::cout << "<기본 생성자>" << std::endl;
 	}
 	~Point2D();
 
