@@ -131,42 +131,13 @@ int main()
 
 */
 
-class MyInt
-{
-public:
-	int mValue;
 
-	MyInt() : mValue()
-	{
-		std::cout << " + [기본생성자]" << std::endl;
-	}
-	MyInt(int value) : mValue{ value }
-	{
-		std::cout << " + [생성자] : " << value << std::endl;
-	}
-	~MyInt()
-	{
-		std::cout << " - [소멸자] : " << mValue << std::endl;
-	}
-};
-
-MyInt operator + (MyInt op1, MyInt op2)
-{
-	return MyInt(op1.mValue + op2.mValue);
-}
-
-MyInt Square(MyInt val)
-{
-	return MyInt(val.mValue * val.mValue);
-}
 int main()
 {
 	Point2D pt1{ 2,3 };
 	Point2D pt2{ 3,4 };
 
 	Point2D pt3 = pt1 + pt2;
-
-	MyInt x(1), y(2);
 	
 	Point2D pt7{};
 
