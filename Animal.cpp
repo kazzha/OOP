@@ -33,4 +33,5 @@ void Animal::SetWeight(int weight)
 
 void Animal::Sound()
 {
+	std::cout << "noise..." << std::endl;
 }

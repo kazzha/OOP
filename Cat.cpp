@@ -1,8 +1,11 @@
 #include "Cat.h"
 #include <iostream>
 
-Cat::Cat() : mBreed{BREED::KOREANSHORT }
+Cat::Cat() : 
+    Animal(0,1),
+    mBreed{BREED::KOREANSHORT }
 {
+    
     std::cout << "\t [+] Cat" << std::endl;
 }
 

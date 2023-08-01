@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Cat.h"
+#include "Dog.h"
 
 /*
 class MyClass
@@ -27,10 +28,23 @@ public:
 };
 */
 
-
-
+class Parent
+{
+public:
+	void f1()
+	{
+		std::cout << "Parent::f1()" << std::endl;
+	}
+	void f2()
+	{
+		std::cout << "Parent::f2()" << std::endl;
+	}
+};
 int main()
 {
-	Cat nabi;
+	Cat c1;
+	Cat* p = new Cat;
+
+	Animal* pAnimal = new Cat;
 
 }
